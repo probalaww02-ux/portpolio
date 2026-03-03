@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Balakumar A | Get in Touch</title>
+  <meta name="description" content="Contact Balakumar A for entry-level job opportunities in Computer Science, Data Analysis, and MS Office.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="navbar.css">
+  
+  <!-- EmailJS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  
+  <script>
+    (function(){
+      emailjs.init("Z695lW5ECoAgTWh2P");
+    })();
+  </script>
+
+  <style>
+    /* =========================
+       ENHANCED CONTACT PAGE CSS
+    ========================= */
+    
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Animated Background Elements - removed for white background */
+
+    /* Page Container */
+    .contact-page {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 100px 20px 50px;
+      position: relative;
+    }
+
+    /* Enhanced Contact Container */
+    .contact-container {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(255, 255, 255, 0.3);
+      max-width: 500px;
+      width: 100%;
+      transform: translateY(0);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+      background-size: 200% 100%;
+      animation: gradientShift 3s ease-in-out infinite;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .contact-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 
+        0 35px 70px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.3);
+    }
+
+    /* Header Section */
+    .contact-header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .contact-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 10px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .contact-title::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      border-radius: 2px;
+    }
+
+    .contact-subtitle {
+      font-size: 16px;
+      color: #666;
+      margin-top: 15px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    /* Enhanced Form Styles */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .form-group {
+      position: relative;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 18px 20px;
+      border: 2px solid rgba(102, 126, 234, 0.2);
+      border-radius: 12px;
+      font-size: 16px;
+      background: rgba(248, 249, 250, 0.8);
+      transition: all 0.3s ease;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #667eea;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 
+        0 0 0 4px rgba(102, 126, 234, 0.1),
+        0 8px 25px rgba(102, 126, 234, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+      font-family: inherit;
+      line-height: 1.6;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #999;
+      font-style: italic;
+      transition: all 0.3s ease;
+    }
+
+    .form-group input:focus::placeholder,
+    .form-group textarea:focus::placeholder {
+      opacity: 0.7;
+      transform: translateY(-2px);
+    }
+
+    /* Enhanced Submit Button */
+    .submit-btn {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 18px 35px;
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .submit-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+    }
+
+    .submit-btn:hover::before {
+      left: 100%;
+    }
+
+    .submit-btn:active {
+      transform: translateY(-1px);
+    }
+
+    /* Status Messages */
+    .status-message {
+      text-align: center;
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      font-weight: 600;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s ease;
+    }
+
+    .status-message.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .status-message.success {
+      background: linear-gradient(135deg, #4CAF50, #45a049);
+      color: white;
+    }
+
+    .status-message.error {
+      background: linear-gradient(135deg, #f44336, #d32f2f);
+      color: white;
+    }
+    /* Enhanced Floating Buttons */
+    .floating-buttons {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 1000;
+    }
+
+    .whatsapp-float,
+    .scroll-to-top {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 24px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .whatsapp-float {
+      background: linear-gradient(135deg, #25D366, #20c055);
+      color: white;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+    }
+
+    .scroll-to-top {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+    }
+
+    .scroll-to-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .scroll-to-top:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 15px 35px rgba(106, 17, 203, 0.4);
+    }
+
+    /* Enhanced Responsive Design */
+    @media (max-width: 1024px) {
+      .contact-container {
+        max-width: 480px;
+        margin: 0 20px;
+        padding: 35px;
+      }
+
+      .contact-page {
+        padding: 90px 20px 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .contact-page {
+        padding: 80px 15px 35px;
+      }
+
+      .contact-container {
+        padding: 30px 25px;
+        border-radius: 16px;
+      }
+
+      .contact-title {
+        font-size: 28px;
+      }
+
+      .contact-subtitle {
+        font-size: 15px;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        padding: 16px 18px;
+        font-size: 15px;
+      }
+
+      .submit-btn {
+        padding: 16px 30px;
+        font-size: 17px;
+      }
+
+      .floating-buttons {
+        bottom: 20px;
+        right: 20px;
+        gap: 12px;
+      }
+
+      .whatsapp-float,
+      .scroll-to-top {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contact-page {
+        padding: 70px 10px 30px;
+      }
+
+      .contact-container {
+        padding: 25px 20px;
+        margin: 0 10px;
+      }
+
+      .contact-title {
+        font-size: 24px;
+      }
+
+      .contact-subtitle {
+        font-size: 14px;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        padding: 14px 16px;
+        font-size: 14px;
+      }
+
+      .form-group textarea {
+        min-height: 100px;
+      }
+
+      .submit-btn {
+        padding: 14px 25px;
+        font-size: 16px;
+      }
+
+      .floating-buttons {
+        bottom: 15px;
+        right: 15px;
+      }
+
+      .whatsapp-float,
+      .scroll-to-top {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+      }
+    }
+
+    @media (max-width: 320px) {
+      .contact-container {
+        padding: 20px 15px;
+      }
+
+      .contact-title {
+        font-size: 22px;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        padding: 12px 14px;
+        font-size: 13px;
+      }
+
+      .submit-btn {
+        padding: 12px 20px;
+        font-size: 15px;
+      }
+    }
+
+    /* Loading Animation */
+    .submit-btn.loading {
+      pointer-events: none;
+      opacity: 0.8;
+    }
+
+    .submit-btn.loading::after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      border: 2px solid transparent;
+      border-top: 2px solid white;
+      border-radius: 50%;
+      display: inline-block;
+      animation: spin 1s linear infinite;
+      margin-left: 10px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation Header -->
+  <header class="navbar spotlight-nav" id="spotlightNav">
+    <div class="logo">
+      Balakumar A
+      <span>Diploma Computer Science</span>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" class="nav-item">Home</a>
+      <a href="visualization.html" class="nav-item">MyProject</a>
+      <a href="Myproject.html" class="nav-item">Skills</a>
+      <a href="contact.html" class="nav-item active">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main Contact Section -->
+  <main class="contact-page">
+    <div class="contact-container">
+      <div class="contact-header">
+        <h1 class="contact-title">Get In Touch</h1>
+        <p class="contact-subtitle">
+          Have a question or want to work together? 
+          <br>I'd love to hear from you!
+        </p>
+      </div>
+
+      <form class="contact-form" id="contact-form">
+        <div class="form-group">
+          <input 
+            type="text" 
+            name="name" 
+            placeholder="Your Full Name" 
+            required
+            autocomplete="name"
+          >
+        </div>
+        
+        <div class="form-group">
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="Your Email Address" 
+            required
+            autocomplete="email"
+          >
+        </div>
+
+        <div class="form-group">
+          <textarea 
+            name="message" 
+            placeholder="Tell me about your project or just say hello..." 
+            required
+            rows="6"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submit-btn">
+          Send Message
+        </button>
+      </form>
+
+      <div class="status-message" id="status"></div>
+    </div>
+  </main>
+
+  <!-- Floating Action Buttons -->
+  <div class="floating-buttons">
+    <a href="https://wa.me/917868943475" class="whatsapp-float" target="_blank" title="WhatsApp">
+      <span>💬</span>
+    </a>
+    <button class="scroll-to-top" id="scrollBtn" onclick="scrollToTop()" title="Scroll to top">
+      <span>↑</span>
+    </button>
+  </div>
+
+  <script>
+    // Enhanced Form Submission with Better UX
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      
+      const submitBtn = document.getElementById('submit-btn');
+      const statusDiv = document.getElementById('status');
+      
+      // Add loading state
+      submitBtn.classList.add('loading');
+      submitBtn.textContent = 'Sending...';
+      
+      // Hide previous status
+      statusDiv.classList.remove('show', 'success', 'error');
+      
+      emailjs.sendForm(
+        "service_lnn4wge",
+        "template_djefzlg", 
+        this,
+        "Z695lW5ECoAgTWh2P"
+      )
+      .then(function() {
+        // Success state
+        statusDiv.innerHTML = "✅ Message sent successfully! I'll get back to you soon.";
+        statusDiv.classList.add('show', 'success');
+        document.getElementById("contact-form").reset();
+        
+        // Reset button after delay
+        setTimeout(() => {
+          submitBtn.classList.remove('loading');
+          submitBtn.textContent = 'Send Message';
+        }, 1000);
+      })
+      .catch(function(error) {
+        // Error state
+        statusDiv.innerHTML = "❌ Oops! Something went wrong. Please try again.";
+        statusDiv.classList.add('show', 'error');
+        console.log("EmailJS Error:", error);
+        
+        // Reset button
+        submitBtn.classList.remove('loading');
+        submitBtn.textContent = 'Send Message';
+      });
+    });
+
+    // Enhanced Navigation
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
+    const items = document.querySelectorAll(".nav-item");
+
+    if (hamburger) {
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
+      });
+
+      items.forEach(item => {
+        item.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navLinks.classList.remove("active");
+        });
+      });
+    }
+
+    // Scroll to Top Functionality
+    window.addEventListener('scroll', function() {
+      const scrollBtn = document.getElementById('scrollBtn');
+      if (window.scrollY > 300) {
+        scrollBtn.classList.add('show');
+      } else {
+        scrollBtn.classList.remove('show');
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    // Form Input Animations
+    document.querySelectorAll('input, textarea').forEach(input => {
+      input.addEventListener('focus', function() {
+        this.parentElement.style.transform = 'scale(1.02)';
+      });
+      
+      input.addEventListener('blur', function() {
+        this.parentElement.style.transform = 'scale(1)';
+      });
+    });
+
+    // Page Load Animation
+    window.addEventListener('load', () => {
+      document.querySelector('.contact-container').style.opacity = '0';
+      document.querySelector('.contact-container').style.transform = 'translateY(50px)';
+      
+      setTimeout(() => {
+        document.querySelector('.contact-container').style.transition = 'all 0.8s ease';
+        document.querySelector('.contact-container').style.opacity = '1';
+        document.querySelector('.contact-container').style.transform = 'translateY(0)';
+      }, 100);
+    });
+  </script>
+
+</body>
+</html>
